@@ -1,10 +1,10 @@
 # React + Vite
 
 Necessary imports:
--npm install
--npm i
--npm i axios
--npm i react-router-dom
+- [npm install]
+- [npm i]
+- [npm i axios]
+- [npm i react-router-dom]
 
 Currently, two official plugins are available:
 
