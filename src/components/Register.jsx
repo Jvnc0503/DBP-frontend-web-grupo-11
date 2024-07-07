@@ -26,7 +26,8 @@ export const Register = () =>{
                         type="text"
                         name="firstName"
                         id="firstName"
-                        value={(e) => setFirstName(e.target.value)}
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
                         required
                     />
                 </div>
@@ -36,7 +37,8 @@ export const Register = () =>{
                         type="text"
                         name="lastName"
                         id="lastName"
-                        value={(e) => setLastName(e.target.value)}
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
                         required
                     />
                 </div>
@@ -46,7 +48,8 @@ export const Register = () =>{
                         type="email"
                         name="email"
                         id="email"
-                        value={(e) => setEmail(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
@@ -56,7 +59,8 @@ export const Register = () =>{
                         type="password"
                         name="password"
                         id="password"
-                        value={(e) => setPassword(e.target.value)}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
