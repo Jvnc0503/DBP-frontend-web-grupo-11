@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import "./App.css"
 import { createRoute } from "../Api"
 
-const RegisterRoute = () =>{
+export const RegisterRoute = () =>{
     const [name, setName] = useState("");
 
     const handleSubmit = async (e) =>{
@@ -29,5 +28,3 @@ const RegisterRoute = () =>{
         </section>
     );
 }
-
-export default RegisterRoute;

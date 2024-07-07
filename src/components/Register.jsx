@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import "./App.css"
 import { fetchRegister } from "../Api"
 import { useNavigate } from "react-router-dom"
 
-const Register = () =>{
+export const Register = () =>{
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -66,5 +65,3 @@ const Register = () =>{
         </section>
     );
 }
-
-export default Register;

@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import "./App.css"
 import { createBus } from "../Api"
 
-const RegisterBus = () =>{
+export const RegisterBus = () =>{
     const [plate, setPlate] = useState("");
     
     const handleSubmit = async (e) =>{
@@ -29,5 +28,3 @@ const RegisterBus = () =>{
         </section>
     );
 }
-
-export default RegisterBus;
