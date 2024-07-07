@@ -6,6 +6,7 @@ export const Login = () =>{
     return(
         <>
             <section>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24jZO4suo-FYsup52cBOLqpgqKoMqfdZtDA&s" alt="Logo de la ATU" className="logo-image"/>
                 <h1 className="title">Login to Metropolitano</h1>
                 <LoginForm/>
                 <br/>
