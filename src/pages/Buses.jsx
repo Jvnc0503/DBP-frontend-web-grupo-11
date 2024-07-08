@@ -7,6 +7,9 @@ export const Buses = () =>{
             <nav>
                 <ul>
                     <li>
+                        <Link to="/buses/asign">Asign yourself a Bus</Link>
+                    </li>
+                    <li>
                         <Link to="/buses/register">Register New Bus</Link>
                     </li>
                     <li>

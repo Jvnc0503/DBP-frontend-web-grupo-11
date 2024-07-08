@@ -38,7 +38,7 @@ export const Dashboard = () => {
                     {driver.bus ? (
                         <div>
                             <p>Plate: {driver.bus.plate}</p>
-                            <p>Route: {driver.bus.route ? driver.bus.route.name : 'N/A'}</p>
+                            <p>Route: {driver.bus.route?.name || 'null'}</p>
                         </div>
                     ) : (
                         <p>No bus information available.</p>

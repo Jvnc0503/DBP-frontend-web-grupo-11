@@ -15,11 +15,13 @@ export const ListBuses = () =>{
 
     return(
         <section>
-            <h1>List of buses</h1>
+            <h2>List of buses</h2>
             <ul>
-                <li key={index}>
-                        Name: {bus.name}, Route: {bus.route.name}
-                </li>
+                {buses.map((bus, index) => (
+                    <li key={index}>
+                        Plate: {bus.plate}, Route: {bus.route?.name || "null"}
+                    </li>
+                ))}
             </ul>
         </section>
     );
