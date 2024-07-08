@@ -14,6 +14,8 @@ import { AsignBus } from './components/AsignBus';
 import { RegisterRoute } from './components/RegisterRoute';
 import { ListRoutes } from './components/ListRoutes';
 import { AsignRoute } from './components/AsignRoute';
+import { RegisterStation } from './components/RegisterStation';
+import { ListStations } from './components/ListStations';
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
         <Route path="/routes/register" element={<RegisterRoute />} />
         <Route path="/routes/list" element={<ListRoutes />} />
         <Route path="/routes/asign" element={<AsignRoute />} />
+        <Route path="/stations/register" element={<RegisterStation />} />
+        <Route path="/stations/list" element={<ListStations />} />
       </Routes>
     </Router>
   );

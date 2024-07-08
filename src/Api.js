@@ -362,7 +362,7 @@ export const getRoutes = async () =>{
     }
     catch(error){
         console.error('Error:', error.message);
-        throw error
+        throw error;
     }
 
 }
@@ -450,6 +450,26 @@ export const createStation = async (body) =>{
 export const getStation = async (id) =>{
     try{
         const response = await axios.get(`${URL}/station/${id}`,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 200){
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        console.error('Error:', error.message);
+        throw error;
+    }
+};
+
+export const getStations = async () =>{
+    try{
+        const response = await axios.get(`${URL}/station`,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }

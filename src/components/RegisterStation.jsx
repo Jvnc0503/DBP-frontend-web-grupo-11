@@ -18,7 +18,8 @@ export const RegisterStation = () =>{
                         type="text"
                         name="name"
                         id="name"
-                        value={(e) => setName(e.target.value)}
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required
                     />
                 </div>
