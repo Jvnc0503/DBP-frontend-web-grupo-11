@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 export const Home = () =>{
     const navigate = useNavigate();
     return(
-        <>
+        <div>
+            <br/>
             <img src="https://sistemas.atu.gob.pe/RegistroTUPA/Content/imagenes/Logotipo_ATU.png"
             alt="Logo ATU"
             style={{width: "400px", height: "auto"}}/>
@@ -15,6 +16,6 @@ export const Home = () =>{
             <button onClick={() => navigate("/auth/login")}>Login Page</button>
             <br/>
             <button onClick={() => navigate("/auth/register")}>Register Page</button>
-        </>
+        </div>
     );
 }

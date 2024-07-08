@@ -167,7 +167,7 @@ export const getDriver = async (id) =>{
 
 export const getDriverOwnInfo = async () =>{
     try{
-        const response = await axios.get(`$[URL}/driver/me`,{
+        const response = await axios.get(`${URL}/driver/me`,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }

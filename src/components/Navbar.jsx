@@ -6,12 +6,16 @@ export const Navbar = () =>{
 
     const logout = () =>{
         localStorage.removeItem("token");
-        navigate("/auth/login");
+        navigate("/home");
     }
 
     if(localStorage.getItem("token")){
         return(
             <nav>
+                <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+                <button onClick={() => navigate("/buses")}>Buses</button>
+                <button>Routes</button>
+                <button>Stations</button>
                 <button onClick={logout}>Logout</button>
             </nav>
         );

@@ -11,9 +11,11 @@ export const RegisterForm = () =>{
     const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
-        await fetchRegister({firstName, lastName, email, password, isDriver})
-        navigate("/auth/login")
+        e.preventDefault();
+        await fetchRegister({firstName, lastName, email, password, isDriver});
+        setTimeout(() => {
+            navigate("/dashboard");
+        }, 2000);
     }
 
     return(
