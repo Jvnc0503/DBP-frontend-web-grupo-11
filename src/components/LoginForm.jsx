@@ -7,7 +7,7 @@ export const LoginForm = () =>{
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     
-    const handleSubmit = async (e) =>{ñ
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         await fetchLogin({email, password});
         setTimeout(() => {
