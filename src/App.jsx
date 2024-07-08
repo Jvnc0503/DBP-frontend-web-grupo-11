@@ -11,6 +11,9 @@ import { Stations } from './pages/Stations';
 import { RegisterBus } from './components/RegisterBus';
 import { ListBuses } from './components/ListBuses';
 import { AsignBus } from './components/AsignBus';
+import { RegisterRoute } from './components/RegisterRoute';
+import { ListRoutes } from './components/ListRoutes';
+import { AsignRoute } from './components/AsignRoute';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         <Route path="/buses/register" element={<RegisterBus />} />
         <Route path="/buses/list" element={<ListBuses />} />
         <Route path="/buses/asign" element={<AsignBus />} />
+        <Route path="/routes/register" element={<RegisterRoute />} />
+        <Route path="/routes/list" element={<ListRoutes />} />
+        <Route path="/routes/asign" element={<AsignRoute />} />
       </Routes>
     </Router>
   );

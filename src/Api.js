@@ -52,7 +52,7 @@ export const createBus = async (body) =>{
                 Authorization: `Bearer ${getToken()}`
             }
         });
-        if(response.statis === 201){
+        if(response.status === 201){
             return response.data;
         }
         else{
@@ -165,6 +165,27 @@ export const updateBusRoute = async (id, body) =>{
     }
 };
 
+export const updateBusOwnRoute = async (body) =>{
+    try{
+        const response = await axios.patch(`${URL}/bus/me/route`, body,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 200){
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        console.error('Error:', error.message);
+        throw error;
+    }
+
+}
+
 export const getDriver = async (id) =>{
     try{
         const response = await axios.get(`${URL}/driver/${id}`,{
@@ -265,6 +286,26 @@ export const updateDriverBus = async (id, body) =>{
     }
 };
 
+export const updateDriverOwnBus = async (body) =>{
+    try{
+        const response = await axios.patch(`${URL}/driver/me/bus`, body,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 200){
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        console.error('Error:', error.message);
+        throw error;
+    }
+}
+
 export const createRoute = async (body) =>{
     try{
         const response = await axios.post(`${URL}/route`, body,{
@@ -304,6 +345,27 @@ export const getRoute = async (id) =>{
         throw error;
     }
 };
+
+export const getRoutes = async () =>{
+    try{
+        const response = await axios.get(`${URL}/route`,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 200){
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        console.error('Error:', error.message);
+        throw error
+    }
+
+}
 
 export const updateRoute = async (id, body) =>{
     try{

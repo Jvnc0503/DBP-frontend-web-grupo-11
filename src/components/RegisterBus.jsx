@@ -11,7 +11,7 @@ export const RegisterBus = () =>{
 
     return(
         <section>
-            <h1>Register new bus</h1>
+            <h2>Register new bus</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="plate">Plate</label>

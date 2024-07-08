@@ -1,17 +1,17 @@
-import React, { useState } from "react"
-import { createRoute } from "../Api"
+import React, { useState } from "react";
+import { updateBusOwnRoute } from "../Api";
 
-export const RegisterRoute = () =>{
+export const AsignRoute = () =>{
     const [name, setName] = useState("");
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
-        await createRoute({name})
+        e.preventDefault();
+        await updateBusOwnRoute({name});
     }
 
     return(
         <section>
-            <h1>Register new route</h1>
+            <h2>Asign a route to a bus</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>

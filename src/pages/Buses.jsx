@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Buses = () =>{
     return(
@@ -7,13 +7,13 @@ export const Buses = () =>{
             <nav>
                 <ul>
                     <li>
-                        <Link to="/buses/asign">Asign yourself a Bus</Link>
+                        <Link to="/buses/asign">Asign Bus</Link>
                     </li>
                     <li>
-                        <Link to="/buses/register">Register New Bus</Link>
+                        <Link to="/buses/register">Register Bus</Link>
                     </li>
                     <li>
-                        <Link to="/buses/list">List All Buses</Link>
+                        <Link to="/buses/list">List Buses</Link>
                     </li>
                 </ul>
             </nav>
