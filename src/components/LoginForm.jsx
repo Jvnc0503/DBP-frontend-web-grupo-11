@@ -12,7 +12,7 @@ export const LoginForm = () =>{
         await fetchLogin({email, password});
         setTimeout(() => {
             navigate("/dashboard");
-        }, 2000);
+        }, 1000);
     };
 
     return(

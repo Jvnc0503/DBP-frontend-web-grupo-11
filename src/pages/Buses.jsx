@@ -1,10 +1,19 @@
 import React from "react";
-import { RegisterBus } from "../components/RegisterBus";
+import { Routes, Route, Link } from "react-router-dom";
 
 export const Buses = () =>{
     return(
         <section>
-            <RegisterBus/>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/buses/register">Register New Bus</Link>
+                    </li>
+                    <li>
+                        <Link to="/buses/list">List All Buses</Link>
+                    </li>
+                </ul>
+            </nav>
         </section>
     );
 }

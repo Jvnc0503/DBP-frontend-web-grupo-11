@@ -19,7 +19,8 @@ export const RegisterBus = () =>{
                         type="text"
                         name="plate"
                         id="plate"
-                        value={(e) => setPlate(e.target.value)}
+                        value={plate}
+                        onChange={(e) => setPlate(e.target.value)}
                         required
                     />
                 </div>

@@ -15,7 +15,7 @@ export const RegisterForm = () =>{
         await fetchRegister({firstName, lastName, email, password, isDriver});
         setTimeout(() => {
             navigate("/dashboard");
-        }, 2000);
+        }, 1000);
     }
 
     return(
