@@ -7,9 +7,6 @@ export const Stations = () =>{
             <nav>
                 <ul>
                     <li>
-                        <Link to="/stations/asign">Asign Station</Link>
-                    </li>
-                    <li>
                         <Link to="/stations/register">Register Station</Link>
                     </li>
                     <li>
