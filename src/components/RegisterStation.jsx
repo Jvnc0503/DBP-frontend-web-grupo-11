@@ -1,12 +1,15 @@
 import React, { useState } from "react"
 import { createStation } from "../Api"
+import { useNavigate } from "react-router-dom"
 
 export const RegisterStation = () =>{
     const [name, setName] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
-        await createStation({name})
+        e.preventDefault();
+        await createStation({name});
+        navigate("/dashboard");
     }
 
     return(

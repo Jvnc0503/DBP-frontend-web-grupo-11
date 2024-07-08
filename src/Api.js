@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
 
-const URL = "localhost:8080";
+const URL = "http://localhost:8080";
 
 function saveToken(token){
     console.log(token);
@@ -10,11 +9,6 @@ function saveToken(token){
 
 function getToken(){
     return localStorage.getItem('token');
-}
-
-export const getRole = () =>{
-    const decodedToken = jwtDecode(getToken());
-    return decodedToken.role;
 }
 
 export const fetchLogin = async (body) =>{
@@ -29,7 +23,7 @@ export const fetchLogin = async (body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -46,7 +40,7 @@ export const fetchRegister = async (body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -66,7 +60,7 @@ export const createBus = async (body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -86,7 +80,7 @@ export const getBus = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -106,7 +100,7 @@ export const updateBus = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -126,7 +120,7 @@ export const deleteBus = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -146,7 +140,7 @@ export const updateBusRoute = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -166,7 +160,7 @@ export const getDriver = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -186,7 +180,7 @@ export const getDriverOwnInfo = async () =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -206,7 +200,7 @@ export const deleteDriver = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -226,7 +220,7 @@ export const updateDriver = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -246,7 +240,7 @@ export const updateDriverBus = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -266,7 +260,7 @@ export const createRoute = async (body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -286,7 +280,7 @@ export const getRoute = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -306,7 +300,7 @@ export const updateRoute = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 }
@@ -326,7 +320,7 @@ export const deleteRoute = async (id) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -346,7 +340,7 @@ export const updateRouteStation = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -366,7 +360,7 @@ export const createStation = async (body) =>{
         }
     }
     catch(error){
-        console.error(error);
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -386,7 +380,7 @@ export const getStation = async (id) =>{
         }
     }
     catch(error){
-        console.error(error)
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -406,7 +400,7 @@ export const updateStation = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error)
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -426,7 +420,7 @@ export const deleteStation = async (id) =>{
         }
     }
     catch(error){
-        console.error(error)
+        console.error('Error:', error.message);
         throw error;
     }
 };
@@ -446,7 +440,7 @@ export const updateStationRoute = async (id, body) =>{
         }
     }
     catch(error){
-        console.error(error)
+        console.error('Error:', error.message);
         throw error;
     }
 };

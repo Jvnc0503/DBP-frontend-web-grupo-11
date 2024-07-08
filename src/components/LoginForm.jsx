@@ -10,6 +10,9 @@ export const LoginForm = () =>{
     const handleSubmit = async (e) =>{ñ
         e.preventDefault();
         await fetchLogin({email, password});
+        setTimeout(() => {
+            navigate("/dashboard");
+        }, 1000);
     };
 
     return(

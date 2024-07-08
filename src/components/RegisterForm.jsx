@@ -13,7 +13,7 @@ export const RegisterForm = () =>{
     const handleSubmit = async (e) =>{
         e.preventDefault()
         await fetchRegister({firstName, lastName, email, password, isDriver})
-        navigate("/login")
+        navigate("/auth/login")
     }
 
     return(
