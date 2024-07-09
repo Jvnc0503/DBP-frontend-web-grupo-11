@@ -15,6 +15,9 @@ export const Stations = () =>{
                     <li>
                         <Link to="/stations/list">List Stations</Link>
                     </li>
+                    <li>
+                        <Link to="/stations/delete">Delete Station</Link>
+                    </li>
                 </ul>
             </nav>
         </section>

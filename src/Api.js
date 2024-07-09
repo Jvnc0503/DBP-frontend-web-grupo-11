@@ -192,6 +192,29 @@ export const getRoutes = async () =>{
     }
 };
 
+export const deleteRoute = async (name) =>{
+    try{
+        const response = await axios.delete(`${URL}/route/${name}`,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 204){
+            alert('Route deleted successfully');
+            return response.data;
+        }
+        else{
+            alert('Route delete failed')
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        console.error('Error:', error.message);
+        throw error;
+    }
+
+}
+
 export const patchBusRoute = async (plate, body) =>{
     try{
         const response = await axios.patch(`${URL}/bus/${plate}/route`, body,{
@@ -204,6 +227,7 @@ export const patchBusRoute = async (plate, body) =>{
             return response.data;
         }
         else{
+            alert('Route assign failed')
             throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
     }
@@ -221,6 +245,7 @@ export const createStation = async (body) =>{
             }
         });
         if(response.status === 201){
+            alert('Station created successfully');
             return response.data;
         }
         else{
@@ -228,6 +253,7 @@ export const createStation = async (body) =>{
         }
     }
     catch(error){
+        alert('Station create failed');
         console.error('Error:', error.message);
         throw error;
     }
@@ -252,6 +278,29 @@ export const getStations = async () =>{
         throw error;
     }
 };
+
+export const deleteStation = async (name) =>{
+    try{
+        const response = await axios.delete(`${URL}/station/${name}`,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 204){
+            alert('Station deleted successfully');
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        alert('Station delete failed')
+        console.error('Error:', error.message);
+        throw error;
+    }
+
+}
 
 export const addRouteStation = async (routeName, body) =>{
     try{

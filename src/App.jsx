@@ -15,9 +15,11 @@ import { DeleteBus } from './components/DeleteBus';
 import { RegisterRoute } from './components/RegisterRoute';
 import { ListRoutes } from './components/ListRoutes';
 import { AsignRoute } from './components/AsignRoute';
+import { DeleteRoute } from './components/DeleteRoute';
 import { RegisterStation } from './components/RegisterStation';
 import { ListStations } from './components/ListStations';
 import { AsignStation } from './components/AsignStation';
+import { DeleteStation } from './components/DeleteStation';
 import { Logout } from './components/Logout';
 
 function App() {
@@ -40,9 +42,11 @@ function App() {
         <Route path="/routes/register" element={<RegisterRoute />} />
         <Route path="/routes/list" element={<ListRoutes />} />
         <Route path="/routes/asign" element={<AsignRoute />} />
+        <Route path="/routes/delete" element={<DeleteRoute />} />
         <Route path="/stations/register" element={<RegisterStation />} />
         <Route path="/stations/list" element={<ListStations />} />
         <Route path="/stations/asign" element={<AsignStation />} />
+        <Route path="/stations/delete" element={<DeleteStation />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>

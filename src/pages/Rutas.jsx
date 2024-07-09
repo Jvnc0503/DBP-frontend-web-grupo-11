@@ -15,6 +15,9 @@ export const Rutas = () =>{
                     <li>
                         <Link to="/routes/list">List Routes</Link>
                     </li>
+                    <li>
+                        <Link to="/routes/delete">Delete Route</Link>
+                    </li>
                 </ul>
             </nav>
         </section>
