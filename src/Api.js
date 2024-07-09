@@ -16,6 +16,7 @@ export const fetchLogin = async (body) =>{
         const response = await axios.post(`${URL}/auth/login`, body);
         if(response.status === 200){
             saveToken(response.data.token);
+            alert('Login successful')
             return response.data;
         }
         else{
@@ -33,6 +34,7 @@ export const fetchRegister = async (body) =>{
         const response = await axios.post(`${URL}/auth/register`, body);
         if(response.status === 200){
             saveToken(response.data.token);
+            alert('Register successful')
             return response.data;
         }
         else{
@@ -53,26 +55,7 @@ export const createBus = async (body) =>{
             }
         });
         if(response.status === 201){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const getBus = async (id) =>{
-    try{
-        const response = await axios.get(`${URL}/bus/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
+            alert('Bus created successfully')
             return response.data;
         }
         else{
@@ -103,39 +86,21 @@ export const getBuses = async () =>{
         console.error('Error:', error.message);
         throw error
     }
-}
-
-export const updateBus = async (id, body) =>{
-    try{
-        const response = await axios.put(`${URL}/bus/${id}`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
 };
 
-export const deleteBus = async (id) =>{
+export const deleteBus = async (plate) =>{
     try{
-        const response = await axios.delete(`${URL}/bus/${id}`,{
+        const response = await axios.delete(`${URL}/bus/${plate}`,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }
         });
         if(response.status === 204){
+            alert('Bus deleted successfully');
             return response.data;
         }
         else{
+            alert('Bus not found')
             throw new Error(`Error: ${response.status} - ${response.statusText}`);
         }
     }
@@ -143,68 +108,7 @@ export const deleteBus = async (id) =>{
         console.error('Error:', error.message);
         throw error;
     }
-};
-
-export const updateBusRoute = async (id, body) =>{
-    try{
-        const response = await axios.patch(`${URL}/bus/${id}/route`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const updateBusOwnRoute = async (body) =>{
-    try{
-        const response = await axios.patch(`${URL}/bus/me/route`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-
 }
-
-export const getDriver = async (id) =>{
-    try{
-        const response = await axios.get(`${URL}/driver/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
 
 export const getDriverOwnInfo = async () =>{
     try{
@@ -226,14 +130,15 @@ export const getDriverOwnInfo = async () =>{
     }
 };
 
-export const deleteDriver = async (id) =>{
+export const patchDriverBus = async (email, body) =>{
     try{
-        const response = await axios.delete(`${URL}/driver/${id}`,{
+        const response = await axios.patch(`${URL}/driver/${email}/bus`, body,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }
         });
-        if(response.status === 204){
+        if(response.status === 200){
+            alert('Bus assigned successfully');
             return response.data;
         }
         else{
@@ -245,66 +150,6 @@ export const deleteDriver = async (id) =>{
         throw error;
     }
 };
-
-export const updateDriver = async (id, body) =>{
-    try{
-        const response = await axios.put(`${URL}/driver/${id}`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const updateDriverBus = async (id, body) =>{
-    try{
-        const response = await axios.patch(`${URL}/driver/${id}/bus`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const updateDriverOwnBus = async (body) =>{
-    try{
-        const response = await axios.patch(`${URL}/driver/me/bus`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-}
 
 export const createRoute = async (body) =>{
     try{
@@ -314,26 +159,7 @@ export const createRoute = async (body) =>{
             }
         });
         if(response.status === 201){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const getRoute = async (id) =>{
-    try{
-        const response = await axios.get(`${URL}/route/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
+            alert('Route created successfully')
             return response.data;
         }
         else{
@@ -364,17 +190,17 @@ export const getRoutes = async () =>{
         console.error('Error:', error.message);
         throw error;
     }
+};
 
-}
-
-export const updateRoute = async (id, body) =>{
+export const patchBusRoute = async (plate, body) =>{
     try{
-        const response = await axios.put(`${URL}/route/${id}`, body,{
+        const response = await axios.patch(`${URL}/bus/${plate}/route`, body,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }
         });
         if(response.status === 200){
+            alert('Route assigned successfully');
             return response.data;
         }
         else{
@@ -386,46 +212,6 @@ export const updateRoute = async (id, body) =>{
         throw error;
     }
 }
-
-export const deleteRoute = async (id) =>{
-    try{
-        const response = await axios.delete(`${URL}/route/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 204){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const updateRouteStation = async (id, body) =>{
-    try{
-        const response = await axios.patch(`${URL}/route/${id}/station`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
 
 export const createStation = async (body) =>{
     try{
@@ -435,26 +221,6 @@ export const createStation = async (body) =>{
             }
         });
         if(response.status === 201){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const getStation = async (id) =>{
-    try{
-        const response = await axios.get(`${URL}/station/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
             return response.data;
         }
         else{
@@ -487,14 +253,15 @@ export const getStations = async () =>{
     }
 };
 
-export const updateStation = async (id, body) =>{
+export const addRouteStation = async (routeName, body) =>{
     try{
-        const response = await axios.put(`${URL}/station/${id}`, body,{
+        const response = await axios.patch(`${URL}/route/${routeName}/station`, body,{
             headers:{
                 Authorization: `Bearer ${getToken()}`
             }
         });
         if(response.status === 200){
+            alert('Station added to route successfully');
             return response.data;
         }
         else{
@@ -505,44 +272,4 @@ export const updateStation = async (id, body) =>{
         console.error('Error:', error.message);
         throw error;
     }
-};
-
-export const deleteStation = async (id) =>{
-    try{
-        const response = await axios.delete(`${URL}/station/${id}`,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 204){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
-
-export const updateStationRoute = async (id, body) =>{
-    try{
-        const response = await axios.patch(`${URL}/station/${id}/route`, body,{
-            headers:{
-                Authorization: `Bearer ${getToken()}`
-            }
-        });
-        if(response.status === 200){
-            return response.data;
-        }
-        else{
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    }
-    catch(error){
-        console.error('Error:', error.message);
-        throw error;
-    }
-};
+}

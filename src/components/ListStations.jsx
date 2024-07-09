@@ -19,7 +19,7 @@ export const ListStations = () =>{
             <ul>
                 {stations.map((station, index) => (
                     <li key={index}>
-                        Name: {station.name}
+                        {station.name}
                     </li>
                 ))}
             </ul>

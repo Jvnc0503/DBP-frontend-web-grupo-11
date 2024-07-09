@@ -1,13 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Logout } from "./Logout";
 
 export const Navbar = () =>{
     const navigate = useNavigate();
-
-    const logout = () =>{
-        localStorage.removeItem("token");
-        navigate("/home");
-    }
 
     if(localStorage.getItem("token")){
         return(
@@ -16,7 +12,7 @@ export const Navbar = () =>{
                 <button onClick={() => navigate("/buses")}>Buses</button>
                 <button onClick={() => navigate("/routes")}>Routes</button>
                 <button onClick={() => navigate("/stations")}>Stations</button>
-                <button onClick={logout}>Logout</button>
+                <button onClick={() => navigate("/logout")}>Logout</button>
             </nav>
         );
     }

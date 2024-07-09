@@ -11,11 +11,14 @@ import { Stations } from './pages/Stations';
 import { RegisterBus } from './components/RegisterBus';
 import { ListBuses } from './components/ListBuses';
 import { AsignBus } from './components/AsignBus';
+import { DeleteBus } from './components/DeleteBus';
 import { RegisterRoute } from './components/RegisterRoute';
 import { ListRoutes } from './components/ListRoutes';
 import { AsignRoute } from './components/AsignRoute';
 import { RegisterStation } from './components/RegisterStation';
 import { ListStations } from './components/ListStations';
+import { AsignStation } from './components/AsignStation';
+import { Logout } from './components/Logout';
 
 function App() {
   return (
@@ -33,11 +36,14 @@ function App() {
         <Route path="/buses/register" element={<RegisterBus />} />
         <Route path="/buses/list" element={<ListBuses />} />
         <Route path="/buses/asign" element={<AsignBus />} />
+        <Route path="/buses/delete" element={<DeleteBus />} />
         <Route path="/routes/register" element={<RegisterRoute />} />
         <Route path="/routes/list" element={<ListRoutes />} />
         <Route path="/routes/asign" element={<AsignRoute />} />
         <Route path="/stations/register" element={<RegisterStation />} />
         <Route path="/stations/list" element={<ListStations />} />
+        <Route path="/stations/asign" element={<AsignStation />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   );

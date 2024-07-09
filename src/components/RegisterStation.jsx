@@ -3,6 +3,7 @@ import { createStation } from "../Api"
 
 export const RegisterStation = () =>{
     const [name, setName] = useState("");
+    
     const handleSubmit = async (e) =>{
         e.preventDefault();
         await createStation({name});
@@ -10,7 +11,7 @@ export const RegisterStation = () =>{
 
     return(
         <section>
-            <h1>Register new station</h1>
+            <h2>Register new station</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>

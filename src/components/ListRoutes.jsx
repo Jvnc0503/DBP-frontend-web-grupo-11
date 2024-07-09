@@ -19,7 +19,7 @@ export const ListRoutes = () =>{
             <ul>
                 {routes.map((route, index) => (
                     <li key={index}>
-                        Name: {route.name}, Stations: {route.stations.map((station, index) => (
+                        {route.name}, Stations: {route.stations.map((station, index) => (
                             <span key={index}>{station.name}</span>
                         ))}
                     </li>

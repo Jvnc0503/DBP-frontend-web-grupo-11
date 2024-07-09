@@ -1,32 +1,32 @@
 import React, { useState } from "react";
-import { patchBusRoute } from "../Api";
+import { addRouteStation } from "../Api";
 
-export const AsignRoute = () =>{
-    const [plate, setPlate] = useState("");
+export const AsignStation = () =>{
+    const [routeName, setRouteName] = useState("");
     const [name, setName] = useState("");
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        await patchBusRoute(plate, {name});
+        await addRouteStation(routeName, {name});
     }
 
     return(
         <section>
-            <h2>Asign a route to your bus</h2>
+            <h2>Asign a station to a route</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="plate">Bus Plate:</label>
+                    <label htmlFor="routeName">Route Name:</label>
                     <input
                         type="text"
-                        name="plate"
-                        id="plate"
-                        value={plate}
-                        onChange={(e) => setPlate(e.target.value)}
+                        name="routeName"
+                        id="routeName"
+                        value={routeName}
+                        onChange={(e) => setRouteName(e.target.value)}
                         required
                     />
                 </div>
                 <div>
-                    <label htmlFor="name">Route Name:</label>
+                    <label htmlFor="name">Station Name:</label>
                     <input
                         type="text"
                         name="name"

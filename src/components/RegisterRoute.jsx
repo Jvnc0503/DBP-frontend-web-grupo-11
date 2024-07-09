@@ -11,7 +11,7 @@ export const RegisterRoute = () =>{
 
     return(
         <section>
-            <h1>Register new route</h1>
+            <h2>Register new route</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
