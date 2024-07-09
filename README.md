@@ -11,4 +11,4 @@ Necessary imports:
 For run:
 - npm run dev
 
-It wasn't possible to deploy the backend for this proyect so, for API calls to work correctly, please clone [this repository](https://github.com/Ggburitox/BackendProyecto.git) and run it on localhost:8080
+It wasn't possible to deploy the backend for this proyect, so for API calls to work correctly, please clone [this repository](https://github.com/Ggburitox/BackendProyecto.git) and run it on localhost:8080
