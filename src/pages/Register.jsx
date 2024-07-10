@@ -6,7 +6,7 @@ export const Register = () =>{
     return(
         <section>
             <br/>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24jZO4suo-FYsup52cBOLqpgqKoMqfdZtDA&s" alt="Logo de la ATU" className="logo-image"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_ATU.png" alt="Logo de la ATU" className="logo-image" style={{width: "200px", height: "auto"}}/>
             <h1 className="title">Driver Register</h1>
             <RegisterForm/>
             <br/>
