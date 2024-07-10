@@ -47,6 +47,7 @@ export const Dashboard = () => {
                     )}
                 </div>
             </div>
+            <br/>
             <button onClick={() => navigate("/delete")}>Delete Account</button>
         </div>
     );
