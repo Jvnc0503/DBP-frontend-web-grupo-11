@@ -47,6 +47,29 @@ export const fetchRegister = async (body) =>{
     }
 };
 
+export const deleteDriver = async (email) =>{
+    try{
+        const response = await axios.delete(`${URL}/driver/${email}`,{
+            headers:{
+                Authorization: `Bearer ${getToken()}`
+            }
+        });
+        if(response.status === 204){
+            alert('Driver deleted successfully')
+            localStorage.removeItem('token');
+            return response.data;
+        }
+        else{
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    }
+    catch(error){
+        alert('Driver delete failed')
+        console.error('Error:', error.message);
+        throw error;
+    }
+}
+
 export const createBus = async (body) =>{
     try{
         const response = await axios.post(`${URL}/bus`, body,{

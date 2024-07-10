@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getDriverOwnInfo } from "../Api";
+import { useNavigate } from "react-router-dom";
 
 export const Dashboard = () => {
     const [driver, setDriver] = useState({});
+    const navigate = useNavigate();
 
     const handleDriver = async () => {
         const response = await getDriverOwnInfo();
@@ -45,6 +47,7 @@ export const Dashboard = () => {
                     )}
                 </div>
             </div>
+            <button onClick={() => navigate("/delete")}>Delete Account</button>
         </div>
     );
 };

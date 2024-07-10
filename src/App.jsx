@@ -20,6 +20,8 @@ import { RegisterStation } from './components/RegisterStation';
 import { ListStations } from './components/ListStations';
 import { AsignStation } from './components/AsignStation';
 import { DeleteStation } from './components/DeleteStation';
+import { DeleteAccount } from './components/DeleteAccount';
+import { DeleteDriver } from './components/DeleteDriver';
 import { Logout } from './components/Logout';
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
         <Route path="/stations/asign" element={<AsignStation />} />
         <Route path="/stations/delete" element={<DeleteStation />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/delete" element={<DeleteAccount />} />
+        <Route path="/delete/driver" element={<DeleteDriver />} />
       </Routes>
     </Router>
   );
